@@ -56,7 +56,7 @@ void setup() {
 // GO FIND THE ARDUINO
   println(Serial.list());    // print a list of available serial ports
   // choose the number between the [] that is connected to the Arduino
-  port = new Serial(this, Serial.list()[9], 115200);  // make sure Arduino is talking serial at this baud rate
+  port = new Serial(this, "COM11", 115200);  // make sure Arduino is talking serial at this baud rate
   port.clear();            // flush buffer
   port.bufferUntil('\n');  // set buffer full flag on receipt of carriage return
 }
@@ -126,7 +126,7 @@ void draw() {
 
 // PRINT THE DATA AND VARIABLE VALUES
   fill(eggshell);                                       // get ready to print text
-  text("Pulse Sensor Amped Visualizer 1.1",245,30);     // tell them what you are
+  text("Pengukur Laju Detak Jantung",245,30);     // tell them what you are
   text("IBI " + IBI + "mS",600,585);                    // print the time between heartbeats in mS
   text(BPM + " BPM",600,200);                           // print the Beats Per Minute
   text("Pulse Window Scale " + nf(zoom,1,2), 150, 585); // show the current scale of Pulse Window
@@ -137,6 +137,3 @@ void draw() {
   
 //   
 }  //end of draw loop
-
-
-
